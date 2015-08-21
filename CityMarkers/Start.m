@@ -33,6 +33,7 @@
                        @"New York",
                        @"Berlin",
                        @"Madrid",
+                       @"Guadalajara",
                        nil];
 
     maLat = [[NSMutableArray alloc] initWithObjects:
@@ -40,6 +41,7 @@
              @"40.712784",
              @"52.520007",
              @"40.416775",
+             @"20.659699",
              nil
              ];
 
@@ -48,6 +50,7 @@
               @"-74.005941",
               @"13.404954",
               @"-3.703790",
+              @"-103.349609",
               nil
               ];
 

@@ -10,6 +10,7 @@
 #import "Declarations.h"
 #import "Maps.h"
 #import "cellTableViewCity.h"
+
 #import <Google/Analytics.h>
 @import GoogleMaps;
 
@@ -20,7 +21,8 @@
 float                   mlatitude;
 float                   mlongitude;
 static int              iLocalizeState = nLocalizing;
-
+double                  latdouble;
+double                  longdouble;
 
 @interface Maps ()
 
@@ -52,6 +54,21 @@ static int              iLocalizeState = nLocalizing;
 - (void)initController {
     self.lblLat.text = maLat[miCharacterIndex];
     self.lblLong.text = maLong[miCharacterIndex];
+    latdouble = [self.lblLat.text  doubleValue];
+    longdouble = [self.lblLong.text  doubleValue];
+}
+
+- (void)viewWillAppear:(BOOL)animated // new
+{
+    NSLog(@"viewDidAppear");
+    [super viewDidAppear:animated];
+    
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"CityMarkers-Maps"];
+     
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
 }
 
@@ -79,7 +96,12 @@ static int              iLocalizeState = nLocalizing;
 /**********************************************************************************************/
 - (void) paintMap {
     [mapView removeFromSuperview];
-    camera                      = [GMSCameraPosition cameraWithLatitude:mlatitude longitude:mlongitude zoom:10.0];
+    camera                      = [GMSCameraPosition cameraWithLatitude: latdouble
+                                                              longitude: longdouble
+                                                                   zoom:17.5
+                                                                bearing:30
+                                                           viewingAngle:40];
+    //camera                      = [GMSCameraPosition cameraWithLatitude:mlatitude longitude:mlongitude zoom:10.0];
     mapView                     = [GMSMapView mapWithFrame:self.view1.bounds camera: camera];
     mapView.frame               = CGRectMake(0, 60, self.view1.frame.size.width, self.view1.frame.size.height-60);
     mapView.myLocationEnabled   = YES;
@@ -91,9 +113,9 @@ static int              iLocalizeState = nLocalizing;
 - (void) paintMarker {
     //[self.tabla reloadData];
     GMSMarker *marker       = [[GMSMarker alloc] init];
-    marker.position         = camera.target;
-    marker.title            = @"Ahora";
-    marker.snippet          = @"Estas Aqui";
+    marker.position         = CLLocationCoordinate2DMake(latdouble, longdouble );
+    marker.title            = @"HI";
+    marker.snippet          = @"Here";
     marker.appearAnimation  = kGMSMarkerAnimationPop;
     marker.map = mapView;
     
@@ -101,8 +123,8 @@ static int              iLocalizeState = nLocalizing;
     NSLog(@"maPlacesTitle.count %d", (int)maCities.count);
     for (int i = 0; i<maCities.count; i++)
     {
-        CGFloat lat                     = (CGFloat)[maLat[i] floatValue];
-        CGFloat lng                     = (CGFloat)[maLong[i] floatValue];
+        CGFloat lat                     = (CGFloat)[maLat[miCharacterIndex] floatValue];
+        CGFloat lng                     = (CGFloat)[maLong[miCharacterIndex] floatValue];
         NSLog(@"Marker lat %f, long %f", lat, lng);
         position                        = CLLocationCoordinate2DMake(lat, lng);
         markerLocation                  = [GMSMarker markerWithPosition:position];
@@ -122,9 +144,10 @@ static int              iLocalizeState = nLocalizing;
     [geoCoder reverseGeocodeLocation:self.locationManager.location completionHandler:^(NSArray *placemarks, NSError *error) {
         
         mlatitude = self.locationManager.location.coordinate.latitude;
+        
         mlongitude = self.locationManager.location.coordinate.longitude;
-        //NSLog(@"mlatitude = %f", mlatitude);
-        //NSLog(@"mlongitude = %f", mlongitude);
+        NSLog(@"mlatitude = %f", mlatitude);
+        NSLog(@"mlongitude = %f", mlongitude);
         if (iLocalizeState == nLocalizing) {
             [self paintMap];
             [self paintMarker];
