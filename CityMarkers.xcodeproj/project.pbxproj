@@ -20,6 +20,7 @@
 		3849663A1B86A5A0009F5A0F /* Maps.m in Sources */ = {isa = PBXBuildFile; fileRef = 384966391B86A5A0009F5A0F /* Maps.m */; };
 		3849663D1B86A6BE009F5A0F /* Declarations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3849663C1B86A6BE009F5A0F /* Declarations.m */; };
 		3849663F1B86AAF4009F5A0F /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = 3849663E1B86AAF4009F5A0F /* PodFile */; };
+		384966411B86AD1B009F5A0F /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 384966401B86AD1B009F5A0F /* GoogleService-Info (1).plist */; };
 		7E52DBF8C11FB0B54956B5C7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEDED98AF1C380B7AAE07D2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		3849663B1B86A6BE009F5A0F /* Declarations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Declarations.h; sourceTree = "<group>"; };
 		3849663C1B86A6BE009F5A0F /* Declarations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Declarations.m; sourceTree = "<group>"; };
 		3849663E1B86AAF4009F5A0F /* PodFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodFile; sourceTree = "<group>"; };
+		384966401B86AD1B009F5A0F /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		A720397A7F894D915F95D6D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "CityMarkers/Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D0F2A06CF5A12F9E2FD4570E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "CityMarkers/Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				384966081B86A391009F5A0F /* Info.plist */,
+				384966401B86AD1B009F5A0F /* GoogleService-Info (1).plist */,
 				384966091B86A391009F5A0F /* main.m */,
 				3849663E1B86AAF4009F5A0F /* PodFile */,
 			);
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				384966161B86A391009F5A0F /* Main.storyboard in Resources */,
+				384966411B86AD1B009F5A0F /* GoogleService-Info (1).plist in Resources */,
 				3849663F1B86AAF4009F5A0F /* PodFile in Resources */,
 				3849661B1B86A391009F5A0F /* LaunchScreen.xib in Resources */,
 				384966371B86A4F5009F5A0F /* cellTableViewCity.xib in Resources */,
