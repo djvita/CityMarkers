@@ -35,7 +35,7 @@
                        @"Madrid",
                        @"Rome",
                        nil];
-    maLat = [[NSMutableArray alloc] initWithCapacity:20];
+
     maLat = [[NSMutableArray alloc] initWithObjects:
              @"20.7101184",
              @"20.7123263",
@@ -43,7 +43,7 @@
              @"20.6493428",
              nil
              ];
-    maLong = [[NSMutableArray alloc] initWithCapacity:20];
+
     maLong = [[NSMutableArray alloc] initWithObjects:
               @"-103.4127531",
               @"-103.3784522",
@@ -101,8 +101,8 @@
     }
     //Fill cell with info from arrays
     cell.lblCity.text   = maCities[indexPath.row];
-    cell.lblLat.text   = maCities[indexPath.row];
-    cell.lblLong.text   = maCities[indexPath.row];
+    cell.lblLat.text     =  maLat[indexPath.row];
+    cell.lblLong.text    =  maLong[indexPath.row];
     
     cell.clipsToBounds  = YES;
     [cell.contentView.superview setClipsToBounds:YES];
