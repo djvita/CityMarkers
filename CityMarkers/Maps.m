@@ -50,7 +50,8 @@ static int              iLocalizeState = nLocalizing;
     
 }
 - (void)initController {
-    
+    self.lblLat.text = maLat[miCharacterIndex];
+    self.lblLong.text = maLong[miCharacterIndex];
     
 }
 

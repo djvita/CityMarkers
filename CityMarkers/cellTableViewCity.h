@@ -11,4 +11,6 @@
 @interface cellTableViewCity : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *lblCity;
+@property (strong, nonatomic) IBOutlet UILabel *lblLat;
+@property (strong, nonatomic) IBOutlet UILabel *lblLong;
 @end

@@ -11,36 +11,17 @@
 #import "cellTableViewCity.h"
 #import "Declarations.h"
 #import <Google/Analytics.h>
-@import GoogleMaps;
 
-#define         nLocalizing     0
-#define         nLocalized      1
-
-//Localization
-float                   mlatitude;
-float                   mlongitude;
-static int              iLocalizeState = nLocalizing;
 
 @interface Start ()
 
 @end
 
-@implementation Start{
-    GMSMapView          *mapView;
-    GMSMarker           *markerLocation;
-    GMSCameraPosition   *camera;
-}
+@implementation Start
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.locationManager                    = [[CLLocationManager alloc] init];
-    self.locationManager.delegate           = self;
-    self.location                           = [[CLLocation alloc] init];
-    self.locationManager.desiredAccuracy    = kCLLocationAccuracyBest;
-    [self.locationManager  requestWhenInUseAuthorization];
-    [self.locationManager startUpdatingLocation];
-    
     [self initController];
     
 
@@ -120,6 +101,8 @@ static int              iLocalizeState = nLocalizing;
     }
     //Fill cell with info from arrays
     cell.lblCity.text   = maCities[indexPath.row];
+    cell.lblLat.text   = maCities[indexPath.row];
+    cell.lblLong.text   = maCities[indexPath.row];
     
     cell.clipsToBounds  = YES;
     [cell.contentView.superview setClipsToBounds:YES];

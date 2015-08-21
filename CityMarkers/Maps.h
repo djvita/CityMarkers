@@ -14,6 +14,8 @@
 @property (strong, nonatomic)   CLLocationManager   *locationManager;
 @property (strong, nonatomic)   CLLocation          *location;
 @property (strong, nonatomic) IBOutlet UIView *view1;
+@property (strong, nonatomic) IBOutlet UILabel *lblLat;
+@property (strong, nonatomic) IBOutlet UILabel *lblLong;
 
 - (IBAction)btnBackPressed:(id)sender;
 
