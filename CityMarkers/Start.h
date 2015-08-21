@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+@import GoogleMaps;
 
-@interface Start : UIViewController
+
+@interface Start : UIViewController<UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tabla;
+@property (strong, nonatomic)   CLLocationManager   *locationManager;
+@property (strong, nonatomic)   CLLocation          *location;
 
 @end
 

@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@import GoogleMaps;
 
-@interface Maps : UIViewController
+
+@interface Maps : UIViewController<CLLocationManagerDelegate>
+@property (strong, nonatomic)   CLLocationManager   *locationManager;
+@property (strong, nonatomic)   CLLocation          *location;
+@property (strong, nonatomic) IBOutlet UIView *view1;
 
 - (IBAction)btnBackPressed:(id)sender;
 

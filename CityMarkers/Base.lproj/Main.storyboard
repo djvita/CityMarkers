@@ -58,6 +58,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="view1" destination="LpU-uQ-SLR" id="Rcn-tl-SwC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5f-tx-bNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

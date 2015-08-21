@@ -10,6 +10,8 @@
 #import "Maps.h"
 #import "cellTableViewCity.h"
 #import "Declarations.h"
+#import <Google/Analytics.h>
+@import GoogleMaps;
 
 #define         nLocalizing     0
 #define         nLocalized      1
@@ -23,12 +25,25 @@ static int              iLocalizeState = nLocalizing;
 
 @end
 
-@implementation Start
+@implementation Start{
+    GMSMapView          *mapView;
+    GMSMarker           *markerLocation;
+    GMSCameraPosition   *camera;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.locationManager                    = [[CLLocationManager alloc] init];
+    self.locationManager.delegate           = self;
+    self.location                           = [[CLLocation alloc] init];
+    self.locationManager.desiredAccuracy    = kCLLocationAccuracyBest;
+    [self.locationManager  requestWhenInUseAuthorization];
+    [self.locationManager startUpdatingLocation];
+    
     [self initController];
+    
+
 }
 -(void)initController {
     //Initialize arrays
@@ -39,6 +54,22 @@ static int              iLocalizeState = nLocalizing;
                        @"Madrid",
                        @"Rome",
                        nil];
+    maLat = [[NSMutableArray alloc] initWithCapacity:20];
+    maLat = [[NSMutableArray alloc] initWithObjects:
+             @"20.7101184",
+             @"20.7123263",
+             @"20.6736248",
+             @"20.6493428",
+             nil
+             ];
+    maLong = [[NSMutableArray alloc] initWithCapacity:20];
+    maLong = [[NSMutableArray alloc] initWithObjects:
+              @"-103.4127531",
+              @"-103.3784522",
+              @"-103.4048358",
+              @"-103.4023513",
+              nil
+              ];
 
 
 }
@@ -48,6 +79,9 @@ static int              iLocalizeState = nLocalizing;
     [super viewDidAppear:animated];
     
     [self.tabla reloadData];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"CityMarkers-Start"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
 }
 
@@ -101,6 +135,7 @@ static int              iLocalizeState = nLocalizing;
     [self presentViewController:viewController animated:YES completion:nil];
     
 }
+
 
 
 
