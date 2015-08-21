@@ -15,6 +15,9 @@
 		384966181B86A391009F5A0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384966171B86A391009F5A0F /* Images.xcassets */; };
 		3849661B1B86A391009F5A0F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384966191B86A391009F5A0F /* LaunchScreen.xib */; };
 		384966271B86A391009F5A0F /* CityMarkersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 384966261B86A391009F5A0F /* CityMarkersTests.m */; };
+		384966361B86A4F5009F5A0F /* cellTableViewCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 384966341B86A4F5009F5A0F /* cellTableViewCity.m */; };
+		384966371B86A4F5009F5A0F /* cellTableViewCity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384966351B86A4F5009F5A0F /* cellTableViewCity.xib */; };
+		3849663A1B86A5A0009F5A0F /* Maps.m in Sources */ = {isa = PBXBuildFile; fileRef = 384966391B86A5A0009F5A0F /* Maps.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,11 @@
 		384966201B86A391009F5A0F /* CityMarkersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityMarkersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		384966251B86A391009F5A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		384966261B86A391009F5A0F /* CityMarkersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityMarkersTests.m; sourceTree = "<group>"; };
+		384966331B86A4F5009F5A0F /* cellTableViewCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cellTableViewCity.h; sourceTree = "<group>"; };
+		384966341B86A4F5009F5A0F /* cellTableViewCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellTableViewCity.m; sourceTree = "<group>"; };
+		384966351B86A4F5009F5A0F /* cellTableViewCity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cellTableViewCity.xib; sourceTree = "<group>"; };
+		384966381B86A5A0009F5A0F /* Maps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maps.h; sourceTree = "<group>"; };
+		384966391B86A5A0009F5A0F /* Maps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maps.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,7 @@
 		384966061B86A391009F5A0F /* CityMarkers */ = {
 			isa = PBXGroup;
 			children = (
+				384966321B86A4C0009F5A0F /* Cells */,
 				384966311B86A3E1009F5A0F /* Main */,
 				384966301B86A3D9009F5A0F /* Conttollers */,
 				384966141B86A391009F5A0F /* Main.storyboard */,
@@ -125,6 +134,8 @@
 			children = (
 				384966111B86A391009F5A0F /* Start.h */,
 				384966121B86A391009F5A0F /* Start.m */,
+				384966381B86A5A0009F5A0F /* Maps.h */,
+				384966391B86A5A0009F5A0F /* Maps.m */,
 			);
 			name = Conttollers;
 			sourceTree = "<group>";
@@ -136,6 +147,16 @@
 				3849660C1B86A391009F5A0F /* AppDelegate.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		384966321B86A4C0009F5A0F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				384966331B86A4F5009F5A0F /* cellTableViewCity.h */,
+				384966341B86A4F5009F5A0F /* cellTableViewCity.m */,
+				384966351B86A4F5009F5A0F /* cellTableViewCity.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +241,7 @@
 			files = (
 				384966161B86A391009F5A0F /* Main.storyboard in Resources */,
 				3849661B1B86A391009F5A0F /* LaunchScreen.xib in Resources */,
+				384966371B86A4F5009F5A0F /* cellTableViewCity.xib in Resources */,
 				384966181B86A391009F5A0F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,9 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384966361B86A4F5009F5A0F /* cellTableViewCity.m in Sources */,
 				384966101B86A391009F5A0F /* CityMarkers.xcdatamodeld in Sources */,
 				3849660D1B86A391009F5A0F /* AppDelegate.m in Sources */,
 				384966131B86A391009F5A0F /* Start.m in Sources */,
+				3849663A1B86A5A0009F5A0F /* Maps.m in Sources */,
 				3849660A1B86A391009F5A0F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
