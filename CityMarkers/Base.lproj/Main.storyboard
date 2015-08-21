@@ -24,6 +24,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tabla" destination="E3d-Cc-Cog" id="HyL-DU-ceJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,6 +46,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnBackPressed:" destination="OTB-kP-SQL" eventType="touchUpInside" id="ASx-Qd-bcl"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" id="LpU-uQ-SLR">
                                 <rect key="frame" x="22" y="94" width="274" height="358"/>
@@ -52,9 +58,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="btnBackPressed" destination="F1K-fb-Nd0" id="1a6-4Y-twH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5f-tx-bNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

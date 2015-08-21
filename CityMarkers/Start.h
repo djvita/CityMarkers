@@ -10,6 +10,7 @@
 
 @interface Start : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITableView *tabla;
 
 @end
 

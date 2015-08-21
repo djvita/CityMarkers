@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface Maps : UIViewController
-@property (strong, nonatomic) IBOutlet UIButton *btnBackPressed;
+
+- (IBAction)btnBackPressed:(id)sender;
 
 @end
